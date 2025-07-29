@@ -1,0 +1,23 @@
+# Copy this file to profiles.yml and update with your local PostgreSQL settings
+# DO NOT commit profiles.yml - it contains your database credentials
+
+default:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      user: [YOUR_USERNAME]  # Replace with your PostgreSQL username
+      pass: ""  # Add password if needed, or leave empty for local trust auth
+      dbname: jaffle_shop_development  # Create this database first: createdb jaffle_shop_development
+      schema: public  # Rails-style default schema
+      threads: 1
+      keepalives_idle: 0
+
+# Setup instructions:
+# 1. cp profiles.template.yml profiles.yml
+# 2. Replace [YOUR_USERNAME] with your actual PostgreSQL username
+# 3. Create the database: createdb jaffle_shop_development
+# 4. Run: dbt seed --full-refresh --vars '{"load_source_data": true}'
+# 5. Run: dbt build
