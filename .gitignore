@@ -15,4 +15,5 @@ profiles.yml
 .ruff_cache
 __pycache__
 
+.macro/*.toml
 .macro/**.local.*
