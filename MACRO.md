@@ -42,7 +42,7 @@ dbt build --select <model_name>
 
 ### 4. Key Project Structure
 - **Models**: `models/staging/` (views) and `models/marts/` (tables)
-- **Tests**: `data-tests/` for custom tests
+- **Data Tests**: `data-tests/` for custom SQL data test files (configured in dbt_project.yml)
 - **Seeds**: `seeds/jaffle-data/` for sample CSV data
 - **Compiled**: `target/compiled/` for compiled SQL
 
