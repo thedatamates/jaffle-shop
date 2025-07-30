@@ -52,6 +52,22 @@ dbt build --select <model_name>
 # Example: dbt parse (for syntax checking)
 ```
 
+### 6. GitHub CLI - Creating Pull Requests
+```bash
+# Create a new branch and switch to it
+git checkout -b feature/your-feature-name
+
+# Stage and commit your changes
+git add .
+git commit -m "Your commit message"
+
+# Push branch and create PR in one command
+gh pr create --title "Your PR Title" --body "Description of changes"
+
+# View PR status
+gh pr status
+```
+
 ## Quick Start Commands
 ```bash
 # Activate environment and run full build
