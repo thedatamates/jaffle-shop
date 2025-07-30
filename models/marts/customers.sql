@@ -37,6 +37,7 @@ joined as (
         customers.*,
 
         customer_orders_summary.count_lifetime_orders,
+        customer_orders_summary.is_repeat_buyer,
         customer_orders_summary.first_ordered_at,
         customer_orders_summary.last_ordered_at,
         customer_orders_summary.lifetime_spend_pretax,
@@ -44,7 +45,7 @@ joined as (
         customer_orders_summary.lifetime_spend,
 
         case
-            when customer_orders_summary.count_lifetime_orders >= 1 then 'returning'
+            when customer_orders_summary.is_repeat_buyer then 'returning'
             else 'new'
         end as customer_type
 
