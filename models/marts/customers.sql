@@ -22,7 +22,12 @@ customer_orders_summary as (
         max(orders.ordered_at) as last_ordered_at,
         sum(orders.subtotal) as lifetime_spend_pretax,
         sum(orders.tax_paid) as lifetime_tax_paid,
-        sum(orders.order_total) as lifetime_spend
+        sum(orders.order_total) as lifetime_spend,
+
+        case
+            when count(distinct orders.order_id) > 1 then 'returning'
+            else 'new'
+        end as customer_type
 
     from orders
 
@@ -41,11 +46,7 @@ joined as (
         customer_orders_summary.lifetime_spend_pretax,
         customer_orders_summary.lifetime_tax_paid,
         customer_orders_summary.lifetime_spend,
-
-        case
-            when customer_orders_summary.count_lifetime_orders >= 1  then 'returning'
-            else 'new'
-        end as customer_type
+        customer_orders_summary.customer_type
 
     from customers
 
