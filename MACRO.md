@@ -70,12 +70,6 @@ gh pr status
 
 ### 7. GitHub Issues Management
 ```bash
-# List all open issues
-gh issue list
-
-# List all issues (open and closed)
-gh issue list --state all
-
 # List issues assigned to me
 gh issue list --assignee @me
 
