@@ -68,6 +68,21 @@ gh pr create --title "Your PR Title" --body "Description of changes"
 gh pr status
 ```
 
+### 7. GitHub Issues Management
+```bash
+# List all open issues
+gh issue list
+
+# List all issues (open and closed)
+gh issue list --state all
+
+# List issues assigned to me
+gh issue list --assignee @me
+
+# View specific issue details
+gh issue view <issue-number>
+```
+
 ## Quick Start Commands
 ```bash
 # Activate environment and run full build
