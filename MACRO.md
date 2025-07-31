@@ -17,7 +17,7 @@ dbt deps
 dbt seed --full-refresh --vars '{"load_source_data": true}'
 ```
 
-## Running models
+## Rebuilding the project
 
 **Activate venv (if not already):**
 ```bash
@@ -32,6 +32,15 @@ dbt build
 **Build specific models:**
 ```bash
 dbt build --select <model_name>
+```
+
+### Issue information
+```bash
+# List issues assigned to me
+gh issue list --assignee @me
+
+# View specific issue details
+gh issue view <issue-number>
 ```
 
 ### Creating pull requests
@@ -51,13 +60,4 @@ gh pr create --title "Your PR Title" --body "Description of changes"
 
 # View PR status
 gh pr status
-```
-
-### GitHub issues management
-```bash
-# List issues assigned to me
-gh issue list --assignee @me
-
-# View specific issue details
-gh issue view <issue-number>
 ```
