@@ -43,7 +43,7 @@ joined as (
         customer_orders_summary.lifetime_spend,
 
         case
-            when customer_orders_summary.count_lifetime_orders >= 1  then 'returning'
+            when customer_orders_summary.count_lifetime_orders >= 2  then 'returning'
             else 'new'
         end as customer_type
 
